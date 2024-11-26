@@ -36,7 +36,7 @@ object MainModule{
     @Provides
     fun provideApiService(): ApiService =
         Retrofit.Builder()
-            .baseUrl("https://cad0944d1ad035acb8af.free.beeceptor.com/")
+            .baseUrl("https://cad0944d1ad035acb8af.free.beeceptor.com/") /*TODO: Change the api server base url*/
             .addCallAdapterFactory(RequestAdapterFactory.create())
             .addConverterFactory(GsonConverterFactory.create(
                 GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm:ss").create()
