@@ -23,7 +23,7 @@ Follow the steps below to set up and run this Android project:
 
 3. **Setup the Project**
 * The project uses https://beeceptor.com/crud-api/ to handle api requests
-* You should start by creating your api server from the page and add to this project
+* You should start by creating your api server with base path _**/api/trips**_ from the beeceptor crud api setup page and add to this project
 * Edit the **AppModule.kt** file and change the base url
 
 _**app/src/main/java/blackorbs/dev/travelapp/dependency/AppModule.kt**_
