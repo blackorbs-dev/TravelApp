@@ -1,5 +1,19 @@
 ## Travel App (blackorbs)
 
+App utilises: 
+* Jetpack Compose: UI Design
+* Hilt: Dependency Injection
+* Retrofit: REST API Calls
+* Kotlin Coroutine & Flow: Asynchronous Programming 
+* MVVM (Model-View-ViewModel): Clean Architecture Pattern
+
+### Web Server: Beeceptor (https://beeceptor.com/crud-api/)
+The project uses Beeceptor as the web server to generate mock api responses. 
+* Start by creating one from the Beeceptor crud api page that can be found [here](https://beeceptor.com/crud-api/).
+* Enter _**/api/trips**_ as the base path when creating the mock server.
+* Copy the base url e.g. _**https://cafc51de396909b12470.free.beeceptor.com/**_ and add to this project following the below procedure.
+
+
 ### How to Setup and Run the Project
 
 Follow the steps below to set up and run this Android project:
@@ -22,13 +36,12 @@ Follow the steps below to set up and run this Android project:
 * Click **OK** to open the project.
 
 3. **Setup the Project**
-* The project uses https://beeceptor.com/crud-api/ to handle api requests
-* You should start by creating your api server with base path _**/api/trips**_ from the beeceptor crud api setup page and add to this project
-* Edit the **AppModule.kt** file and change the base url
+* Edit the **AppModule.kt** file and change the base url on **line 39**.
+* Simply paste the base url you copied earlier for the mock server you created with Beeceptor.
 
 _**app/src/main/java/blackorbs/dev/travelapp/dependency/AppModule.kt**_
 ```
-@Singleton
+    @Singleton
     @Provides
     fun provideApiService(): ApiService =
         Retrofit.Builder()
@@ -45,4 +58,8 @@ _**app/src/main/java/blackorbs/dev/travelapp/dependency/AppModule.kt**_
 * Click the **Run button** (green triangle) in the toolbar, or press **Shift + F10 or Control + R (macOS)**.
 * Select your connected device or emulator.
 
+### API Endpoints:
+* {base url}/api/trips: To create new or get all created trips.
+* {base url}/api/trips/{id}: To get a trip by id
+* https://nominatim.openstreetmap.org/search: Location search API
 
